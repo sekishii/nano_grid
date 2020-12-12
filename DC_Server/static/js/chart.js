@@ -37,7 +37,7 @@ $(function(){
         	]
         },
         size: {
-	        height: 180,
+	        height: 150,
 	        width: 200
 	    }
 
@@ -73,8 +73,8 @@ $(function(){
           }
 	    },
 	    size: {
-	        height: 280,
-	        width: 350
+	        height: 200,
+	        width: 280
 	    }
 	});
 
@@ -89,11 +89,16 @@ $(function(){
 	        type : 'pie',
 	        onclick: function (d, i) { console.log("onclick", d, i); },
 	        onmouseover: function (d, i) { console.log("onmouseover", d, i); },
-	        onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+	        onmouseout: function (d, i) { console.log("onmouseout", d, i); },
+	        colors: {
+	            系統: '#40E0D0',
+	            PV: '#CAFF70',
+	            マルチ: '#63B8FF',
+	          }
 	    },
 	    size: {
-	        height: 280,
-	        width: 350
+	        height: 200,
+	        width: 280
 	    }
 	});
 
@@ -133,8 +138,8 @@ $(function(){
           }
 	    },
 	    size: {
-	        height: 220,
-	        width: 250
+	        height: 200,
+	        width: 220
 	    }
 	});
 
@@ -164,8 +169,8 @@ $(function(){
           }
 	    },
 	    size: {
-	        height: 220,
-	        width: 250
+	        height: 200,
+	        width: 220
 	    }
 	});
 
@@ -196,8 +201,8 @@ $(function(){
           }
 	    },
 	    size: {
-	        height: 220,
-	        width: 250
+	        height: 200,
+	        width: 220
 	    }
 	});
 
@@ -224,8 +229,8 @@ $(function(){
           }
 	    },
 	    size: {
-	        height: 220,
-	        width: 250
+	        height: 200,
+	        width: 220
 	    }
 	});
 
@@ -256,8 +261,8 @@ $(function(){
           }
 	    },
 	    size: {
-	        height: 220,
-	        width: 250
+	        height: 200,
+	        width: 220
 	    }
 	});
 

@@ -33,7 +33,9 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="head">社会シミュレーション</div>
+        <div class="head">&nbsp;&nbsp;
+            <h4>社会シミュレーション</h4>
+        </div>
         <div class="main" class="col-md-12 col-sm-12 col-xs-12"">
             <div class="left">
                 <!-- <div id="topToolbar">
@@ -42,7 +44,7 @@
                     <a href="#" id="topOnOff" style="padding-left: 740px;">隠す</a>
                 </div> -->
                 <div id="topToolbar" class="col-md-12 col-sm-12 col-xs-12">
-                    <span style="font-size: 22px; font-weight:bold;">
+                    <span style="font-size: 20px; font-weight:bold;">
                         運用設定
                     </span>
                     <span>
@@ -50,7 +52,68 @@
                     </span>
                 </div>
                 <div id="topToolbarMenu">
-                    <table>
+                    <form class="form-inline col-md-12 col-sm-12 col-xs-12" role="form" style="margin-bottom: 50px;">
+                        <div class="form-group" style="width:15%">
+                            <div >
+                                <h5>大きな環境変動</h5>
+                                <div class="switch-box">
+                                    <input id="switchButton1" type="checkbox" class="switch" />
+                                    <label for="switchButton1"></label>
+                                </div>
+                            </div>
+                            <div style="margin-top: 50px;">
+                                <h5>天気</h5>
+                                <div class="switch-box2">
+                                    <input id="switchButton2" type="checkbox" class="switch" />
+                                    <label for="switchButton2"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-left: 50px; width:70%">
+                            <div class="row">
+                                <div class="form-group col-md-3 col-sm-3 col-xs-3" style="vertical-align: top;">
+                                    <p style="font-size: 14px; font-weight:bold;">データセット</p>
+                                    <input type="radio" name="" id="radio1" >
+                                    <label for="radio1" class="control-label" style="margin-left: 5px;">ブラコンB期間<br>(オフライン)</label>
+                                </div>
+                                <div class="form-group col-md-3 col-sm-3 col-xs-3" style="vertical-align: top;">
+                                    <p style="font-size: 14px; font-weight:bold;">評価条件</p>
+                                    <div>
+                                        <input type="checkbox" name="" id="check11">&nbsp;運搬特化<br>
+                                        <input type="checkbox" name="" id="check12">&nbsp;バランス<br>
+                                        <input type="checkbox" name="" id="check13">&nbsp;電力特化
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6 col-sm-6 col-xs-6" style="vertical-align: top; margin-left: -30px;">
+                                    <p style="font-size: 14px; font-weight:bold;">評価結果</p>
+                                    <div id="chartLeft1" style="margin-left: -20px;"></div>
+                                </div>
+                                
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-3 col-sm-3 col-xs-3" style="vertical-align: top;">
+                                    <input type="radio" name="" id="radio2" >
+                                    <label for="radio2" class="control-label" style="margin-left: 5px;">ブラコンB期間<br>(オフライン)</label>
+                                </div>
+                                <div class="form-group col-md-7 col-sm-7 col-xs-7" style="vertical-align: top;">
+                                    <label for="select1">アルゴリズム1</label>
+                                    <select class="form-control" name="" id="select1" style="width:350px; margin-left: -8px;">
+                                        <option style="text-align:center" value="">アルゴリズム1</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-2 col-sm-2 col-xs-2" style="margin-top: 24px;">
+                                    <input type="button" class="btn btn-primary" value="実行" id="button1" style="width: 160px;color: black; background-color: #87CEFA">
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 10px;">
+                                <div class="form-group col-md-3 col-sm-3 col-xs-3" >
+                                    <input type="radio" name="" id="radio3" >
+                                    <label for="radio3" class="control-label" style="margin-left: 5px;">従来手法</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- <table>
                         <tr class="row1">
                             <td class="clm1"></td>
                             <td class="clm2">
@@ -125,14 +188,14 @@
                             <td class="clm3"></td>
                             <td class="clm4"></td>
                         </tr>
-                    </table>
+                    </table> -->
                 </div>
                 <div class="GIS" id="cesiumContainer"></div>
                 <div id="credit"></div>
             </div>
             <div class="dashboard col-md-12 col-sm-12 col-xs-12">
                 <div class="col-md-12 col-sm-12 col-xs-12" style="display：inline-block; margin-top: 15px; margin-bottom: 20px;">
-                    <span style="font-size: 22px; font-weight:bold;">
+                    <span style="font-size: 20px; font-weight:bold;">
                         グラフ表示
                     </span>
                     <span>
@@ -148,8 +211,7 @@
                     </div>
                     <div class="content" style="margin-top: 20px;">
                         <div class="form form-label-left col-md-12 col-sm-12 col-xs-12" >
-                            
-                            <h4>電力</h4>
+                            <div><h4>電力</h4></div>
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div id="chart11"></div>
@@ -159,12 +221,11 @@
                                 </div>
                             </div>
 
-
-                            <h4>気象データ</h4>
+                            <div><h4>気象データ</h4></div>
                             <div class="form-group">
                                 <div class="col-md-4 col-sm-4 col-xs-12">
                                     <div id="chart21">
-                                        <table class="table table-hover table-bordered ">
+                                        <table class="table table-hover table-bordered" width="50px">
                                             <thead>
                                                 <tr class="tr-head">
                                                     <th scope="col" class="col-md-2 col-sm-2 col-xs-4">項目</th>
@@ -200,8 +261,8 @@
                                 </div>
                             </div>
 
-                            <h4>その他</h4>
                             <div class="form-group">
+                                <div><h4>その他</h4></div>
                                 <div class="col-md-4 col-sm-4 col-xs-12">
                                     <div id="chart31"></div>
                                 </div>
