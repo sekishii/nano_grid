@@ -92,14 +92,6 @@
     /* background-color: deeppink; */
 }
 
-.dashboard {
-   /* display: flex;
-    flex: 1;*/
-    width: 100%;
-    /* background-color: darkorange; */
-}
-
-
 
 #c2r {
     display: flex;
@@ -139,18 +131,18 @@
 body {font-family: Arial;}
 
 /* Style the tab */
-.tab {
-
+.dashboard {
+   /* display: flex;
+    flex: 1;*/
     width: 100%;
-    overflow: hidden;
+   /* overflow: hidden;*/
     border: 1px solid #ccc;
-    background-color: #f1f1f1;
+    /* background-color: darkorange; */
 }
 
 
-
 /*アイコンを表示*/
-.tab label::after {
+.dashboard label::after {
     content: '◀';
     font-family: 'Font Awesome 5 Free';
     padding-right: 8px;
@@ -161,24 +153,28 @@ body {font-family: Arial;}
 
 /*中身を非表示にしておく*/
 .accshow {
-    height: 0;
     padding: 0;
-    overflow: hidden;
-    opacity: 0;
-    visibility: hidden;
+    /*overflow: hidden;*/
+    /*opacity: 0;*/
+    display: none;
+    /*visibility: hidden;*/
 }
 
 /*クリックで中身表示*/
 .cssacc:checked + label + .accshow {
     height: auto;
     padding: 5px;
-    background: #fdfbf9;
-    opacity: 1;
-    visibility: visible;
+    /*background: #fdfbf9;*/
+    background:blue;
+   /* overflow: visible;*/
+    /*opacity: 1;*/
+    /*visibility: visible;*/
+     display: block;
 }
 
-.tab .accshow chart {
-    margin: 15px 10px}
+/*.dashboard .accshow chart {
+    margin: 15px 10px
+}*/
 
 /*アイコンを入れ替える*/
 .cssacc:checked + label::after {
@@ -187,41 +183,56 @@ body {font-family: Arial;}
 
 
 /*ラベル*/
-.tab label {
-    display: block;
-    margin: 1.5px 0;
-    padding : 13px 12px;
+.dashboard label {
+    display: flex;
+    margin: 1.5px;
+    padding : 9px 7px;
     color: #858380;
+    width: 100%;
     font-weight: bold;
+    font-size: 18px;
     background:  #ccc;
     cursor :pointer;
     transition: all 0.5s;
 }
 
-
-
 /*ラベルホバー時*/
-.tab label:hover {
+.dashboard label:hover {
     background :#ccc;
 }
 
 /*チェックは隠す*/
-.tab .cssacc {
+.dashboard .cssacc {
     display: none;
 }
 
+table {
+    table-layout: fixed;
+}
+
 tr {
+    padding: 0;
+    height: 1px;
+}
+
+table thead tr th {
+    padding: 2px 0 2px 20px;
+    font-size: 12px;
     height: 10px;
 }
 
-td {
-    font-size: 5px;
-    height: 10px;
+table tbody tr td {
+    padding: 2px 0 2px 20px;
+    font-size: 10px;
+}
+
+#graphGrid .form-group {
+    height: 100px;
 }
 
 
 /* Create an active/current tablink class */
-.tab button.active {
+.dashboard button.active {
   background-color: #ccc;
 }
 

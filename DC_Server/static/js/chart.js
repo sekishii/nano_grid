@@ -73,7 +73,7 @@ $(function(){
           }
 	    },
 	    size: {
-	        height: 200,
+	        height: 160,
 	        width: 280
 	    }
 	});
@@ -97,7 +97,7 @@ $(function(){
 	          }
 	    },
 	    size: {
-	        height: 200,
+	        height: 160,
 	        width: 280
 	    }
 	});
@@ -138,7 +138,7 @@ $(function(){
           }
 	    },
 	    size: {
-	        height: 200,
+	        height: 160,
 	        width: 220
 	    }
 	});
@@ -169,7 +169,7 @@ $(function(){
           }
 	    },
 	    size: {
-	        height: 200,
+	        height: 160,
 	        width: 220
 	    }
 	});
@@ -201,7 +201,7 @@ $(function(){
           }
 	    },
 	    size: {
-	        height: 200,
+	        height: 160,
 	        width: 220
 	    }
 	});
@@ -229,7 +229,7 @@ $(function(){
           }
 	    },
 	    size: {
-	        height: 200,
+	        height: 160,
 	        width: 220
 	    }
 	});
@@ -261,7 +261,7 @@ $(function(){
           }
 	    },
 	    size: {
-	        height: 200,
+	        height: 160,
 	        width: 220
 	    }
 	});

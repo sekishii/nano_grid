@@ -5,9 +5,36 @@ $(function(){
     });
 
 
-    $('#rightOnOff').click(function(){
-        $('#rightToolbarMenu').toggle();
+    $('#graphOnOff').click(function(){
+      alert("tgest");
+        $('#graphGrid').toggle();
 
+    });
+
+    $('#label1').change(function(){
+      console.log($(this).prop('checked'));
+      if ($(this).prop('checked')) {
+        // $('.accshow').css('overflow', 'visible');
+        $('.accshow').css('display', 'block');
+        // $('.accshow').css('opacity', 1);
+      } else {
+        // $('.accshow').css('overflow', 'hidden');
+        $('.accshow').css('display', 'none');
+        // $('.accshow').css('opacity', 0);
+      }
+    });
+
+    $('#label2').change(function(){
+      // console.log($(this).prop('checked'));
+      // if ($(this).prop('checked')) {
+      //   $('.accshow').css('overflow', 'visible');
+      //   $('.accshow').css('visibility', 'visible');
+      //   $('.accshow').css('opacity', 1);
+      // } else {
+      //   $('.accshow').css('overflow', 'hidden');
+      //   $('.accshow').css('visibility', 'hidden');
+      //   $('.accshow').css('opacity', 0);
+      // }
     });
 
     
@@ -85,3 +112,4 @@ function openCity(evt, cityName) {
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " active";
   }
+
