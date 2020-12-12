@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- Load c3.css -->
+    <link href="{% static 'css/c3.css' %}" rel="stylesheet">
+    <!-- Load d3.js and c3.js -->
+    <script src="{% static 'js/d3-5.8.2.min.js' %}" charset="utf-8"></script>
+    <script src="{% static 'js/c3.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}" charset="utf-8"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+    <script src="{% static 'js/cesium_box.js' %}"></script>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/switch_box.css' %}" rel="stylesheet">
+    <script src="{% static 'Build/Cesium/Cesium.js' %}"></script>
+    <link href="{% static 'Build/Cesium/Widgets/widgets.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css" type="text/css" media="all" />
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $(".btn1").click(function(){
+          $("chart").toggle(); //toggle()方法进行显示隐藏交互事件，如果显示的就进行隐藏，如果是隐藏的就显示
+          });
+          
+        });
+        </script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="head">社会シミュレーション</div>
+        <div class="main" class="col-md-12 col-sm-12 col-xs-12"">
+            <div class="left">
+                <!-- <div id="topToolbar">
+                    <span style="padding-left:15px, padding-right :50px;">運用設定</span>
+                    <input type="button" id="topOnOff" value="隠す">
+                    <a href="#" id="topOnOff" style="padding-left: 740px;">隠す</a>
+                </div> -->
+                <div id="topToolbar" class="col-md-12 col-sm-12 col-xs-12">
+                    <span style="font-size: 22px; font-weight:bold;">
+                        運用設定
+                    </span>
+                    <span>
+                        <a href="#" id="topOnOff" style="float: right">隠す</a>
+                    </span>
+                </div>
+                <div id="topToolbarMenu">
+                    <table>
+                        <tr class="row1">
+                            <td class="clm1"></td>
+                            <td class="clm2">
+                            <span>データセット</span>  
+                            </td>
+                            <td class="clm3"id="c2r">
+                                <span>評価条件</span>
+                                &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                                <span>評価結果</span>
+                            </td>
+                            <td class="clm4"></td>
+                        </tr>
+                        <tr class="row2">
+                            <td class="clm1">
+                                <span>大きな環境変動</span>
+                                <div class="switch-box">
+                                    <input id="switchButton1" type="checkbox" class="switch" />
+                                    <label for="switchButton1"></label>
+                                </div>
+                            </td>
+                            <td class="clm2">
+                                
+                                <br>
+                                <input type="radio" name="" id="radio1">
+                                <span>ブラコンB期間(オフライン)</span>
+                            </td>
+                            <td class="clm3-2" id="c2r" style="padding-top:16px;">
+                                <div>
+                                    <input type="checkbox" name="" id="check11">運搬特化<br>
+                                    <input type="checkbox" name="" id="check12">バランス<br>
+                                    <input type="checkbox" name="" id="check13">電力特化
+                                </div>
+                                &nbsp; &nbsp; &nbsp; &nbsp;
+                                <div>
+                                    
+                                    <div id="chart1" class="dataGenChart">
+                                    </div>
+                                    <br><br><br>
+                                </div>
+                                
+                            </td>
+                            <td class="clm4"></td>
+                        </tr>
+                        <tr class="row3">
+                            <td class="clm1">
+                                <span>天気</span>
+                                <div class="switch-box2">
+                                    <input id="switchButton2" type="checkbox" class="switch" />
+                                    <label for="switchButton2"></label>
+                                </div>
+                            </td>
+                            <td class="clm2">
+                                <input type="radio" name="" id="radio2">
+                                <span>ブロコンB期間(オンライン)</span>
+                            </td>
+                            <td class="clm3"style="padding-top:10px;">
+                                <span>アルゴリズム</span><br>
+                                <select name="" id="select1">
+                                    <option value="">アルゴリズム1</option>
+                                </select>
+                            </td>
+                            <td class="clm4">
+                                <br><input type="button" class="btn btn-primary" value="実行"id="button1">
+                            </td>
+                        </tr>
+                        <tr class="row4">
+                            <td class="clm1"></td>
+                            <td class="clm2">
+                                <input type="radio" name="" id="radio3">
+                                <span>従来手法</span>
+                            </td>
+                            <td class="clm3"></td>
+                            <td class="clm4"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="GIS" id="cesiumContainer"></div>
+                <div id="credit"></div>
+            </div>
+            <div class="dashboard col-md-12 col-sm-12 col-xs-12">
+                <div class="col-md-12 col-sm-12 col-xs-12" style="display：inline-block; margin-top: 15px; margin-bottom: 20px;">
+                    <span style="font-size: 22px; font-weight:bold;">
+                        グラフ表示
+                    </span>
+                    <span>
+                        <a href="#" id="graphOnOff" style="float: right">隠す</a>
+                    </span>
+                </div>
+                <div id="graphGrid" class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 10px;" >
+                    <div class="col-md-12 col-sm-12 col-xs-12 align-center" style="background-color:#DCDCDC; height: 35px;">
+                        <span style="font-size: 16px; font-weight:bold;padding-top: 10px;">個別のナノグリッド</span>
+                        <ul style="float: right; list-style: none;">
+                            <li><a class="collapse-link"><i class="fa fa-caret-up"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="content" style="margin-top: 20px;">
+                        <div class="form form-label-left col-md-12 col-sm-12 col-xs-12" >
+                            
+                            <h4>電力</h4>
+                            <div class="form-group">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div id="chart11"></div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div id="chart12"></div>
+                                </div>
+                            </div>
+
+
+                            <h4>気象データ</h4>
+                            <div class="form-group">
+                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                    <div id="chart21">
+                                        <table class="table table-hover table-bordered ">
+                                            <thead>
+                                                <tr class="tr-head">
+                                                    <th scope="col" class="col-md-2 col-sm-2 col-xs-4">項目</th>
+                                                    <th scope="col" class="col-md-2 col-sm-2 col-xs-4">表示</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>日射量</td>
+                                                    <td><input type="checkbox" checked="true" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>風速</td>
+                                                    <td><input type="checkbox" checked="true" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>降雨量</td>
+                                                    <td><input type="checkbox" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>気温</td>
+                                                    <td><input type="checkbox" /></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                    <div id="chart22"></div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                    <div id="chart23"></div>
+                                </div>
+                            </div>
+
+                            <h4>その他</h4>
+                            <div class="form-group">
+                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                    <div id="chart31"></div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                    <div id="chart32"></div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                    <div id="chart33"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="{% static 'js/chart.js' %}"></script>
+</html>
+    
+</body>
+</html>

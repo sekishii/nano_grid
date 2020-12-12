@@ -1,0 +1,159 @@
+/* 滑块开关1 */
+.switch-box {
+    width: 73px;
+}
+
+.switch-box .switch {
+    /* 隐藏checkbox默认样式 */
+    display: none;
+}
+.switch-box label {
+    /* 通过label扩大点击热区 */
+    position: relative;
+    display: block;
+    margin: 1px;
+    height: 28px;
+    cursor: pointer;
+}
+.switch-box label::before {
+    /* before设置前滚动小圆球 */
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -13px;
+    margin-left: 18px;
+    width: 26px;
+    height: 26px;
+    border-radius: 100%;
+    background-color: rgb(135, 238, 135);
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.06);
+    /* 通过transform、transition属性控制元素过渡进而形成css3动画 */
+    -webkit-transform: translateX(-9px);
+    -moz-transform: translateX(-9px);
+    transform: translateX(-9px);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.switch-box .switch:checked~label::before {
+    /* 语义：被选中的类名为"switch"元素后面的label元素里的伪类元素，进行更改css样式 */
+    /* 形成伪类结构选择器：":"冒号加布尔值"checked" */
+    /* " Ele1 ~ Ele2 "波浪号在css的作用：连接的元素必须有相同的父元素，选择出现在Ele1后的Ele2（但不必跟在Ele1，也就是说可以并列）  */
+    -webkit-transform: translateX(10px);
+    -moz-transform: translateX(10px);
+    transform: translateX(10px);
+}
+.switch-box label::after {
+    /* after设置滚动前背景色 */
+    content: "ON";
+    display: block;
+    border-radius: 30px;
+    height: 26px;
+    background-color: #ffffff;
+    border: 0.8px solid;
+    border-color:rgb(101, 236, 124);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    text-align: left;
+    text-indent: 0.8em;
+    line-height: 29px;
+    color:rgb(44, 160, 64);
+}
+.switch-box .switch:checked~label::after {
+    background-color: #ffffff;
+    border-color:rgb(134, 134, 134);
+    content: "OFF";
+    text-align: left;
+    text-indent: 2em;
+    color:rgb(134, 134, 134);
+
+}
+.switch-box .switch:checked~label::before {
+    margin-left: -44px;
+    background-color:rgb(158, 157, 157);
+    border-color:rgb(167, 165, 165)
+}
+
+
+/* 滑块开关2 */
+.switch-box2 {
+    width: 73px;
+}
+
+.switch-box2 .switch {
+    /* 隐藏checkbox默认样式 */
+    display: none;
+}
+.switch-box2 label {
+    /* 通过label扩大点击热区 */
+    position: relative;
+    display: block;
+    margin: 1px;
+    height: 28px;
+    cursor: pointer;
+}
+.switch-box2 label::before {
+    /* before设置前滚动小圆球 */
+    content: '';
+    background-color:rgb(158, 157, 157);
+    border-color:rgb(167, 165, 165);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -13px;
+    margin-left: 18px;
+    width: 26px;
+    height: 26px;
+    border-radius: 100%;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.06);
+    /* 通过transform、transition属性控制元素过渡进而形成css3动画 */
+    -webkit-transform: translateX(-9px);
+    -moz-transform: translateX(-9px);
+    transform: translateX(-9px);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.switch-box2 .switch:checked~label::before {
+    /* 语义：被选中的类名为"switch"元素后面的label元素里的伪类元素，进行更改css样式 */
+    /* 形成伪类结构选择器：":"冒号加布尔值"checked" */
+    /* " Ele1 ~ Ele2 "波浪号在css的作用：连接的元素必须有相同的父元素，选择出现在Ele1后的Ele2（但不必跟在Ele1，也就是说可以并列）  */
+    -webkit-transform: translateX(10px);
+    -moz-transform: translateX(10px);
+    transform: translateX(10px);
+}
+.switch-box2 label::after {
+    /* after设置滚动前背景色 */
+    content: "雨";
+    background-color: #ffffff;
+    border-color:rgb(134, 134, 134);
+    color:rgb(134, 134, 134);
+    display: block;
+    border-radius: 30px;
+    height: 26px;
+    border: 0.8px solid;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    text-align: left;
+    text-indent: 1em;
+    line-height: 29px;
+    
+}
+.switch-box2 .switch:checked~label::after {
+    content: "晴";
+    background-color: #ffffff;
+    border-color:rgb(101, 236, 124);
+    color:rgb(44, 160, 64);
+    text-align: left;
+    text-indent: 2.4em;
+    
+
+}
+.switch-box2 .switch:checked~label::before {
+    margin-left: -45px;
+    background-color: rgb(135, 238, 135);
+
+}

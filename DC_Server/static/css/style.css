@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    /* background-color: black; */
+}
+
+.head {
+    display: flex;
+    min-height: 20px;
+    background-color: cornflowerblue;
+    padding-top:8px;
+    padding-left:8px;
+    padding-bottom:8px;
+    font-weight:900;
+    font-size: 120%;
+}
+
+.main {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    min-height: 100%;
+    /* background-color: cyan; */
+}
+
+.left {
+    display: flex;
+    flex: 1;
+    min-width: 880px;
+    flex-direction: column;
+    /* background-color: darkseagreen; */
+}
+
+#topToolbar {
+    display: inline-block;;
+    /*flex-direction: row;
+    min-height: 20px;*/
+    margin-top: 15px; 
+    margin-bottom: 20px;
+    /* background-color: crimson; */
+}
+
+#topToolbarMenu {
+    display: flex;
+    /* min-height: 300px; */
+    /* background-color: crimson; */
+}
+
+#graphToolbar {
+    display: flex;
+    flex-direction: row;
+    min-height: 20px;
+    /* background-color: crimson; */
+}
+
+#graphToolbarMenu {
+    display: flex;
+    /* min-height: 300px; */
+    /* background-color: crimson; */
+}
+
+#cesiumContainer {
+    display: flex;
+    flex: 1;
+    width: 880px;
+    height: 400px;
+    background-color: darkgreen;
+}
+
+#credit {
+    visibility: hidden;
+}
+
+.right {
+    display: flex;
+    flex: 1;
+    max-width: 50px;
+    /* background-color: deeppink; */
+}
+
+.dashboard {
+   /* display: flex;
+    flex: 1;*/
+    width: 100%;
+    /* background-color: darkorange; */
+}
+
+
+
+#c2r {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.clm1 {
+    min-width: 150px;
+    padding-left:15px ;
+}
+
+.clm2 {
+    min-width: 250px;
+    padding-left:5px ;
+}
+
+.clm3 {
+    min-width: 250px;
+}
+.clm3-2 {
+    min-width: 350px;
+}
+
+.clm3 select {
+    /* display: inline-block; */
+    min-width: 280px;
+    min-height: 25px;
+}
+
+.clm4 input {
+    min-width: 120px;
+    min-height: 25px;
+    background-color: #61bee9d3;
+}
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+
+
+/*アイコンを表示*/
+.tab label::after {
+    content: '◀';
+    font-family: 'Font Awesome 5 Free';
+    padding-right: 8px;
+    font-weight: 900;
+}
+
+
+
+/*中身を非表示にしておく*/
+.accshow {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/*クリックで中身表示*/
+.cssacc:checked + label + .accshow {
+    height: auto;
+    padding: 5px;
+    background: #fdfbf9;
+    opacity: 1;
+    visibility: visible;
+}
+
+.tab .accshow chart {
+    margin: 15px 10px}
+
+/*アイコンを入れ替える*/
+.cssacc:checked + label::after {
+    content: '▼';
+}
+
+
+/*ラベル*/
+.tab label {
+    display: block;
+    margin: 1.5px 0;
+    padding : 13px 12px;
+    color: #858380;
+    font-weight: bold;
+    background:  #ccc;
+    cursor :pointer;
+    transition: all 0.5s;
+}
+
+
+
+/*ラベルホバー時*/
+.tab label:hover {
+    background :#ccc;
+}
+
+/*チェックは隠す*/
+.tab .cssacc {
+    display: none;
+}
+
+
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
