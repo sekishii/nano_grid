@@ -73,15 +73,15 @@
                             <div class="row">
                                 <div class="form-group col-md-3 col-sm-3 col-xs-3" style="vertical-align: top;">
                                     <p style="font-size: 14px; font-weight:bold;">データセット</p>
-                                    <input type="radio" name="" id="radio1" >
-                                    <label for="radio1" class="control-label" style="margin-left: 5px;">ブラコンB期間<br>(オフライン)</label>
+                                    <input type="radio" id="radio1" checked="checked" class="radio">
+                                    <label for="radio1" class="control-label" style="margin-left: 5px;">ブラコンB問題<br>(オフライン)</label>
                                 </div>
                                 <div class="form-group col-md-3 col-sm-3 col-xs-3" style="vertical-align: top;">
                                     <p style="font-size: 14px; font-weight:bold;">評価条件</p>
-                                    <div>
-                                        <input type="checkbox" name="" id="check11">&nbsp;運搬特化<br>
-                                        <input type="checkbox" name="" id="check12">&nbsp;バランス<br>
-                                        <input type="checkbox" name="" id="check13">&nbsp;電力特化
+                                    <div id='hkdiv'>
+                                        <input type="checkbox" name="" id="check11" class="hkcheck">&nbsp;運搬特化<br>
+                                        <input type="checkbox" name="" id="check12" class="hkcheck">&nbsp;バランス<br>
+                                        <input type="checkbox" name="" id="check13" class="hkcheck">&nbsp;電力特化
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6 col-sm-6 col-xs-6" style="vertical-align: top; margin-left: -30px;">
@@ -91,22 +91,23 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-3 col-sm-3 col-xs-3" style="vertical-align: top;">
-                                    <input type="radio" name="" id="radio2" >
-                                    <label for="radio2" class="control-label" style="margin-left: 5px;">ブラコンB期間<br>(オフライン)</label>
+                                    <input type="radio" name="" id="radio2" class="radio">
+                                    <label for="radio2" class="control-label" style="margin-left: 5px;">ブロコンB問題<br>(オフライン)</label>
                                 </div>
                                 <div class="form-group col-md-7 col-sm-7 col-xs-7" style="vertical-align: top;">
                                     <label for="select1">アルゴリズム1</label>
-                                    <select class="form-control" name="" id="select1" style="width:350px; margin-left: -8px;">
+                                    <select class="form-control"  disabled="disabled" name="" id="select1" style="width:350px; margin-left: -8px;">
                                         <option style="text-align:center" value="">アルゴリズム1</option>
+                                        <option style="text-align:center" value="">アルゴリズム2</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-2 col-sm-2 col-xs-2" style="margin-top: 24px;">
-                                    <input type="button" class="btn btn-primary" value="実行" id="button1" style="width: 160px;color: black; background-color: #87CEFA">
+                                    <input type="button" class="btn btn-primary"  disabled="disabled" value="実行" id="button1" style="width: 160px;color: black; background-color: #87CEFA">
                                 </div>
                             </div>
                             <div class="row" style="margin-top: 10px;">
                                 <div class="form-group col-md-3 col-sm-3 col-xs-3" >
-                                    <input type="radio" name="" id="radio3" >
+                                    <input type="radio" name="" id="radio3" class="radio">
                                     <label for="radio3" class="control-label" style="margin-left: 5px;">従来手法</label>
                                 </div>
                             </div>

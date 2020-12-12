@@ -6,10 +6,46 @@ $(function(){
 
 
     $('#graphOnOff').click(function(){
-      alert("tgest");
         $('#graphGrid').toggle();
 
     });
+
+    $(".radio").change(function(){
+      
+      // alert($(this).prop('id'));
+      $('.radio[checked="checked"]').prop('checked', false);
+      $('.radio[checked="checked"]').removeAttr('checked');
+      $(this).prop('checked', true);
+      $(this).attr('checked', 'checked');
+      // alert($('.radio[checked="checked"]').prop('id'));
+
+      // alert($('#radio1').prop('checked'));
+      if ($('#radio1').prop('checked')) {
+        $('.hkcheck').removeAttr('disabled');
+      } else {
+        $('.hkcheck').prop('checked', false);
+        $('.hkcheck').attr('checked', false);
+        $('.hkcheck').attr('disabled', true);
+      }
+
+      // alert($('#radio2').prop('checked'));
+      if ($('#radio2').prop('checked')) {
+        $('#select1').removeAttr('disabled');
+        $('#button1').removeAttr('disabled');
+      } else {
+        $('#select1').attr('disabled', true);
+        $('#button1').attr('disabled', true);
+      }
+
+    });
+
+    // $("#radio2").change((function() {
+    //   if ($("#radio1").prop('checked')) {
+
+    //   }
+    //   $('#radio1')
+
+
 
     $('#label1').change(function(){
       console.log($(this).prop('checked'));
